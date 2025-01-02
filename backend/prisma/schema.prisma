@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://test_owner:Kt2hlyHRbuz3@ep-lively-bonus-a5qyktuy.us-east-2.aws.neon.tech/PDf?sslmode=require"
+}
+
+model Question {
+  id        Int      @id @default(autoincrement())
+  pdfId     Int? // Foreign key field
+  // uploadedPdf UploadedPdf @relation(fields: [pdfId], references: [id]) // Relation to UploadedPdf
+  question  String
+  answer    String
+  createdAt DateTime @default(now())
+}
+
+model UploadedPdf {
+  id        Int      @id @default(autoincrement())
+  pdfurl    String
+  content   String? // Field for extracted content
+  // questions Question[] // Relation to the Question model
+  createdAt DateTime @default(now())
+}
