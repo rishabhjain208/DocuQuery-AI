@@ -1,5 +1,4 @@
 const { PrismaClient } = require("@prisma/client");
-const multer = require("multer");
 const pdfParse = require("pdf-parse");
 const axios = require("axios");
 const prisma = new PrismaClient();

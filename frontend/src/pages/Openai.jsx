@@ -23,7 +23,7 @@ const Openai = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/questions/ask",
+        "https://docuquery-ai-backend-1.onrender.com/api/questions/ask",
         {
           question: input,
         }
